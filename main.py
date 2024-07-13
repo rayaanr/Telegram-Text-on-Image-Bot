@@ -4,8 +4,11 @@ import requests
 from io import BytesIO
 from generator import generate_image
 from utils import resize_image
+from dotenv import load_dotenv
 
-BOT_TOKEN = ''
+# Load environment variables from .env file
+load_dotenv()
+BOT_TOKEN = os.getenv('BOT_TOKEN')
 
 # Telegram bot setup
 bot = telebot.TeleBot(BOT_TOKEN)
